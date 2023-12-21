@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     "hit_dakwerken.common",
     "hit_dakwerken.article",
     "hit_dakwerken.customer",
+    "hit_dakwerken.invoice",
+    "hit_dakwerken.project",
+    "hit_dakwerken.offer",
+    "hit_dakwerken.request"
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+
+# TODO Create Customer profile model
+
+class Customer(models.Model):
+    pass
+
+
+class CustomerDetails(models.Model):
+    pass
