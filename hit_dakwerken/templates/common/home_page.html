@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div id="main-background">
+        <img src="{% static 'images/waterproofing1.jpg' %}" alt="">
+    </div>
+    <section class="main-section">
+        <h1>Waterproofing Materials And Protective Coatings</h1>
+        <section  class="main-section-products">
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/felt.png' %}" alt="">
+                </div>
+                <a href="#">Waterprofing Felt</a>
+            </article>
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/powders.png' %}" alt="">
+                </div>
+                <a href="#">Waterprofing Powders</a>
+            </article>
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/powder_coatings.png' %}" alt="">
+                </div>
+                <a href="#">Powder Coatings</a>
+            </article>
+
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/protective_paints.png' %}" alt="">
+                </div>
+                <a href="#">Protective Paint</a>
+            </article>
+        </section>
+    </section>
+    <section class="main-section">
+        <h1>Construction Chemicals</h1>
+        <section  class="main-section-products">
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/Build_chem.png' %}" alt="">
+                </div>
+                <a href="#">Building Chemicals</a>
+            </article>
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/special_chem.png' %}" alt="">
+                </div>
+                <a href="#">Speciality Powders</a>
+            </article>
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/constr.png' %}" alt="">
+                </div>
+                <a href="#">Construction Adhesives</a>
+            </article>
+            <article class="product-article">
+                <div class="product-img">
+                    <img src="{% static 'images/grund.png' %}" alt="">
+                </div>
+                <a href="#">Grouting Compounds</a>
+            </article>
+        </section>
+    </section>
+{% endblock %}
