@@ -6,7 +6,7 @@ def home_page(request):
 
 
 def projects(request):
-    return render(request, 'common/projects.html')
+    return render(request, 'common/../../templates/project/projects.html')
 
 
 def about_us(request):
@@ -18,4 +18,4 @@ def contacts(request):
 
 
 def login(request):
-    return render(request, 'common/login.html')
+    return render(request, 'common/../../templates/account/login.html')
