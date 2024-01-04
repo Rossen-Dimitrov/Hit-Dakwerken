@@ -93,3 +93,51 @@ h1 {
     display: flex;
     justify-content: space-evenly;
 }
+
+form {
+    margin-left: 70px;
+}
+
+input {
+    border: black;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+form input{
+    color: #49aac5;
+    border: 4px solid cornflowerblue;
+}
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+}
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    border: 2px solid #555555;
+    border-radius: 3px;
+    background-color: white;
+}
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 12px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}

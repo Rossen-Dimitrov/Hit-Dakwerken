@@ -16,6 +16,3 @@ def about_us(request):
 def contacts(request):
     return render(request, 'common/contacts.html')
 
-
-def login(request):
-    return render(request, 'common/../../templates/account/login.html')

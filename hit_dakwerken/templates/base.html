@@ -17,24 +17,49 @@
     <div class="header">
         <header class="navbar">
             <div class="navbar-logo" id="navbar-logo-id">
-                <a href="{% url 'home page' %}">
+                <a href="{% url 'home' %}">
                     <img src="{% static '/images/hit_logo.jpg' %}" alt="HIT Dakwerken logo">
                 </a>
             </div>
             <nav class="navbar-links-container">
                 <ul>
                     <li class="navbar-item">
-                        <a href="{% url 'home page' %}" class="navbar-link">HOME</a></li>
-                    <li class="navbar-item">
+                        <a href="{% url 'home' %}" class="navbar-link">HOME</a>
+                    </li>
+                
+{#                    <li class="navbar-item">#}
 {#                        <a href="#" class="navbar-link">CATEGORIES</a></li>#}
-{#                        <li class="navbar-item">#}
-                        <a href="{% url 'projects page' %}" class="navbar-link">PROJECTS</a></li>
+                
                     <li class="navbar-item">
-                        <a href="{% url 'about_us page' %}" class="navbar-link">ABOUT US</a></li>
+                        <a href="{% url 'projects' %}" class="navbar-link">PROJECTS</a>
+                    </li>
+                
                     <li class="navbar-item">
-                        <a href="{% url 'contacts page' %}" class="navbar-link">CONTACTS</a></li>
+                        <a href="{% url 'about_us' %}" class="navbar-link">ABOUT US</a>
+                    </li>
+                
                     <li class="navbar-item">
-                        <a href="{% url 'login page' %}" class="navbar-link">LOGIN</a></li>
+                        <a href="{% url 'contacts' %}" class="navbar-link">CONTACTS</a>
+                    </li>
+                
+                    <li class="navbar-item">
+                        <a href="{% url 'register' %}" class="navbar-link">ASQ FOR OFFER</a>
+                    </li>
+                
+                    {% if request.user.is_authenticated %}
+                        
+                        <li class="navbar-item">
+                            <a href="{% url 'logouts' %}" class="navbar-link"><i>LOGOUT: {{ user.username }}</i></a>
+                        </li>
+                        
+                    {% else %}
+                        
+                        <li class="navbar-item">
+                            <a href="{% url 'login' %}" class="navbar-link">LOGIN</a>
+                        </li>
+                        
+                    {% endif %}
+                    
                </ul>
             </nav>
         </header>
@@ -49,17 +74,17 @@
             <nav class="navbar-links-container">
                 <ul>
                     <li class="navbar-item">
-                        <a href="common/home_page.html" class="navbar-link">HOME</a></li>
+                        <a href="{% url 'home' %}" class="navbar-link">HOME</a></li>
 {#                    <li class="navbar-item">#}
 {#                        <a href="#" class="navbar-link">CATEGORIES</a></li>#}
-{#                        <li class="navbar-item">#}
-                        <a href="#" class="navbar-link">PROJECTS</a></li>
+{#                    <li class="navbar-item">#}
+                        <a href="{% url 'projects' %}" class="navbar-link">PROJECTS</a></li>
                     <li class="navbar-item">
-                        <a href="#" class="navbar-link">ABOUT US</a></li>
+                        <a href="{% url 'about_us' %}" class="navbar-link">ABOUT US</a></li>
                     <li class="navbar-item">
-                        <a href="common/contacts.html" class="navbar-link">CONTACTS</a></li>
+                        <a href="{% url 'contacts' %}" class="navbar-link">CONTACTS</a></li>
                     <li class="navbar-item">
-                        <a href="#" class="navbar-link">LOGIN</a></li>
+                        <a href="{% url 'login' %}" class="navbar-link">LOGIN</a></li>
                </ul>
             </nav>
         </section>

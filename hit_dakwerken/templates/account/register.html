@@ -1,5 +1,20 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
-    <h1 class="contacts">This will be Create Account Page</h1>
+    <h1>
+        current user:{{ request.user }}
+    </h1>
+    <h1 class="contacts">
+        To asq for offer you must register first
+    </h1>
+    <form action="{% url 'register' %}" method="post">
+{#    <form style="border: 1px solid grey; margin: 5% 0%; padding: 5% 2%" action="{% url 'register' %}" method="post">#}
+        {{ form.as_p }}
+        
+        <div>
+            <button class="btn-primary">Register</button>
+        </div>
+        
+     {% csrf_token %}
+    </form>
 {% endblock %}
+
