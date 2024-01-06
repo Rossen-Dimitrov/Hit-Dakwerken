@@ -1,8 +1,8 @@
+from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth import models as auth_models
 
 
-class AppUserManager(auth_models.BaseUserManager):
+class AppUserManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, email, password, **extra_fields):
@@ -10,9 +10,9 @@ class AppUserManager(auth_models.BaseUserManager):
         Create and save a user with the given username, email, and password.
         """
         if not email:
-            raise ValueError("The given username must be set")
-        # email = self.normalize_email(email)
+            raise ValueError("The given email must be set")
 
+        email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.password = make_password(password)
         user.save(using=self._db)

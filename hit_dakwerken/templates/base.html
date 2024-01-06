@@ -49,7 +49,7 @@
                     {% if request.user.is_authenticated %}
                         
                         <li class="navbar-item">
-                            <a href="{% url 'logouts' %}" class="navbar-link"><i>LOGOUT: {{ user.username }}</i></a>
+                            <a href="{% url 'logouts' %}" class="navbar-link"><i>LOGOUT: {{ user.email }}</i></a>
                         </li>
                         
                     {% else %}

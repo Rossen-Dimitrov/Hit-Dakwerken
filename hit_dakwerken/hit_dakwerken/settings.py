@@ -129,7 +129,7 @@ LOGOUT_REDIRECT_URL = reverse_lazy('home')
 LOGIN_URL = reverse_lazy('login')
 
 # Defines the models for **Users**
-# AUTH_USER_MODEL = 'accounts.AppUser'
+AUTH_USER_MODEL = 'accounts.AppUser'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
