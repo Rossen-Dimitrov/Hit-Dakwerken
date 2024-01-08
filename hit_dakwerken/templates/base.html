@@ -22,7 +22,16 @@
                 </a>
             </div>
             <nav class="navbar-links-container">
+            
                 <ul>
+                    {% if request.user.is_authenticated %}
+                        
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link"><i>WELCOME: {{ user.email }}</i></a>
+                        </li>
+                        
+                    {% endif %}
+                
                     <li class="navbar-item">
                         <a href="{% url 'home' %}" class="navbar-link">HOME</a>
                     </li>
@@ -49,7 +58,7 @@
                     {% if request.user.is_authenticated %}
                         
                         <li class="navbar-item">
-                            <a href="{% url 'logouts' %}" class="navbar-link"><i>LOGOUT: {{ user.email }}</i></a>
+                            <a href="{% url 'logouts' %}" class="navbar-link">LOGOUT</a>
                         </li>
                         
                     {% else %}

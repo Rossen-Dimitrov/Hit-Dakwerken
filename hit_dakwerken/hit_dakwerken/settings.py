@@ -18,16 +18,18 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
 
-    # Custom Apps
+THIRD_PARTY_APPS = ()
+
+HIT_DAKWERKEN_APPS = (
     "hit_dakwerken.common",
     "hit_dakwerken.article",
     "hit_dakwerken.invoice",
@@ -35,7 +37,9 @@ INSTALLED_APPS = [
     "hit_dakwerken.offer",
     "hit_dakwerken.request",
     "hit_dakwerken.accounts",
-]
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + HIT_DAKWERKEN_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

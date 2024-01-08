@@ -43,6 +43,11 @@ body{
 .navbar-logo{
     background-color: gray;
 }
+
+i {
+    color: red;
+}
+
 .main {
     margin-top: 72px;
 }
