@@ -5,10 +5,10 @@ from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import login as auth_login
 
-
 from hit_dakwerken.accounts.forms import AppUserRegisterForm
 
 from hit_dakwerken.accounts.models import AppUser
+
 # from hit_dakwerken.settings import LOGIN_URL
 
 UserModel = get_user_model()
@@ -35,8 +35,15 @@ class LoginUserView(auth_views.LoginView):
 
 
 class DetailsUserView(auth_mixins.LoginRequiredMixin, views.DetailView):
-    template_name = 'account/user_details.html'
+    template_name = 'account/profile_details.html'
     model = UserModel
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #
+    #     print(context)
+    #
+    #     return context
 
 
 class LogoutsUserView(views.View):

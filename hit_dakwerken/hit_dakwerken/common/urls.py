@@ -1,8 +1,9 @@
-from django.urls import path, include
+from django.urls import path
 from hit_dakwerken.common import views
+from hit_dakwerken.common.views import HomePageView
 
 urlpatterns = [
-    path('', views.home_page, name='home'),
+    path('', HomePageView.as_view(), name='home'),
     path('projects/', views.projects, name='projects'),
     path('about_us/', views.about_us, name='about_us'),
     path('contacts/', views.contacts, name='contacts'),

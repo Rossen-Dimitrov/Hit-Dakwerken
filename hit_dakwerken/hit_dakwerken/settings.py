@@ -83,7 +83,16 @@ DATABASES = {
     }
 }
 
-
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "mydatabase",
+#         "USER": "mydatabaseuser",
+#         "PASSWORD": "mypassword",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -127,7 +136,7 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = reverse_lazy('register')
 
 # Default URL to redirect to **after successful logout*
-LOGOUT_REDIRECT_URL = reverse_lazy('home')
+HOME_REDIRECT_URL = reverse_lazy('home')
 
 # Default URL to redirect to **for login**
 LOGIN_URL = reverse_lazy('login')

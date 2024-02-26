@@ -1,10 +1,15 @@
 from django.urls import path
-from hit_dakwerken.common import views
+from hit_dakwerken.article.views import (
+    ArticleCreateView,
+    ArticleEditView,
+    ArticleDetailsView,
+    ArticleDeleteView
+)
 
 urlpatterns = [
-    path('', views.home_page, name='list articles'),
-    path('create/', views.projects, name='create articles'),
-    path('edit/', views.about_us, name='edit articles'),
-    # path('details/', views.login, name='details articles'),
-    path('delete/', views.contacts, name='delete articles'),
+    path('create/', ArticleCreateView.as_view(), name='create articles'),
+    path('details/<int:pk>/', ArticleDetailsView.as_view(), name='details article'),
+    path('edit/<int:pk>/', ArticleEditView.as_view(), name='edit article'),
+    path('delete/<int:pk>/', ArticleDeleteView.as_view(), name='delete article'),
 ]
+

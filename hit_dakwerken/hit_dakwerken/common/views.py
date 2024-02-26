@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from django.views import generic as views
+
+from hit_dakwerken.article.models import Article
 
 
-def home_page(request):
-    return render(request, 'common/home_page.html')
+class HomePageView(views.ListView):
+    model = Article
+    template_name = 'common/home_page.html'
+    context_object_name = 'articles'
 
 
 def projects(request):
@@ -15,4 +20,3 @@ def about_us(request):
 
 def contacts(request):
     return render(request, 'common/contacts.html')
-

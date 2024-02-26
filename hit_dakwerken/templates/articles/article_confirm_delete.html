@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="contacts">Delete {{ article.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input class="btn-primary" type="submit" value="DELETE">
+        <a class="btn-primary" href="{% url "delete article" pk=article.pk %}">CANCEL</a>
+    </form>
+    
+{% endblock %}

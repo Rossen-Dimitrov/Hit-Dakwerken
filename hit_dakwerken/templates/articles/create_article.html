@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="contacts">Create Article</h1>
+    <form action="{% url 'create articles' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <div>
+            <button class="btn-primary">Create</button>
+        </div>
+    </form>
+{% endblock %}

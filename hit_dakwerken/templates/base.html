@@ -27,9 +27,13 @@
                     {% if request.user.is_authenticated %}
                         
                         <li class="navbar-item">
-                            <a href="#" class="navbar-link"><i>WELCOME: {{ user.email }}</i></a>
+                            <a href="{% url 'profile details' pk=user.pk %}" class="navbar-link">
+                                <i>WELCOME: {{ user.email }}</i>
+                            </a>
                         </li>
-                        
+                        <li class="navbar-item">
+                            <a href="{% url 'create articles' %}" class="navbar-link">ARTICLE</a>
+                        </li>
                     {% endif %}
                 
                     <li class="navbar-item">

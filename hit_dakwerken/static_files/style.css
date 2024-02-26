@@ -44,8 +44,8 @@ body{
     background-color: gray;
 }
 
-i {
-    color: red;
+.navbar-link > i {
+    text-transform: uppercase;
 }
 
 .main {

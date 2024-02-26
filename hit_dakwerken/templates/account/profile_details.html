@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>
+        current user:{{ request.user }}
+    </h1>
+    <h1 class="contacts">
+        This will be user details page
+    </h1>
+    <p>
+        {{ object.email }}
+        {{ object.appuserprofile.first_name }}
+        {{ object.appuserprofile.last_name }}
+    </p>
+
+    <form action="">
+    {% csrf_token %}
+    </form>
+{% endblock %}

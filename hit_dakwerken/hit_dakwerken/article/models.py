@@ -4,17 +4,21 @@ from django.db import models
 
 UserModel = get_user_model()
 
+ARTICLE_TITLE_MAX_LENGTH = 250
+ARTICLE_TITLE_MIN_LENGTH = 3
+ARTICLE_CONTENT_MIN_LENGTH = 10
+
 
 class Article(models.Model):
     title = models.CharField(
-        max_length=250,
+        max_length=ARTICLE_TITLE_MAX_LENGTH,
         validators=(
-            validators.MinLengthValidator(3),
+            validators.MinLengthValidator(ARTICLE_TITLE_MIN_LENGTH),
         ),
     )
     content = models.TextField(
         validators=(
-            validators.MinLengthValidator(10),
+            validators.MinLengthValidator(ARTICLE_CONTENT_MIN_LENGTH),
         ),
     )
     authors = models.ManyToManyField(
@@ -35,3 +39,6 @@ class Article(models.Model):
         null=True,
         blank=True,
     )
+
+    def __str__(self):
+        return self.title
