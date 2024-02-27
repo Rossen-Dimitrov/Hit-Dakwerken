@@ -21,10 +21,10 @@ class ArticleDetailsView(views.DetailView):
 
 
 class ArticleEditView(auth_mixins.LoginRequiredMixin, views.UpdateView):
-    form_class = ArticleCreateForm
     model = models.Article
     template_name = 'articles/edit_article.html'
-    success_url = reverse_lazy('details articles')
+    success_url = HOME_REDIRECT_URL
+    fields = ['title', 'content', 'image']
 
 
 class ArticleDeleteView(auth_mixins.LoginRequiredMixin, views.DeleteView):
