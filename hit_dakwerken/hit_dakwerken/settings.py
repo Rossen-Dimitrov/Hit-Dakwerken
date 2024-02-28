@@ -141,6 +141,8 @@ HOME_REDIRECT_URL = reverse_lazy('home')
 # Default URL to redirect to **for login**
 LOGIN_URL = reverse_lazy('login')
 
+LOGOUT_REDIRECT_URL = reverse_lazy('home')
+
 # Defines the models for **Users**
 AUTH_USER_MODEL = 'accounts.AppUser'
 

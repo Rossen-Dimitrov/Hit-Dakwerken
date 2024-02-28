@@ -1,15 +1,11 @@
 from django.contrib.auth import views as auth_views, get_user_model
 from django.contrib.auth import mixins as auth_mixins
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import login as auth_login
-
 from hit_dakwerken.accounts.forms import AppUserRegisterForm
-
 from hit_dakwerken.accounts.models import AppUser
-
-# from hit_dakwerken.settings import LOGIN_URL
+from hit_dakwerken.settings import HOME_REDIRECT_URL
 
 UserModel = get_user_model()
 
@@ -46,10 +42,11 @@ class DetailsUserView(auth_mixins.LoginRequiredMixin, views.DetailView):
     #     return context
 
 
-class LogoutsUserView(views.View):
-    def get(self, request):
-        return render(request, 'account/logout.html')
-
-
 class LogoutUserView(auth_views.LogoutView):
     pass
+
+    # next_page = HOME_REDIRECT_URL
+    #
+    # def get(self, request, *args, **kwargs):
+    #     response = super().get(request, *args, **kwargs)
+    #     return response
