@@ -1,0 +1,62 @@
+{% load static %}
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img width="120px" src="{% static '/images/hit_logo.jpg' %}"
+                         alt="img1">
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <ul class="nav-group">
+                    <li class="nav-item">
+                        <form class="searchbar" method="post" action="{% url 'home' %}">
+                            {% csrf_token %}
+                            {{ search_form }}
+                            <button>
+                                <img src="{% static '/images/search.png' %}" height="18" alt="img2">
+                            </button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'projects' %}">
+                            <i>PROJECTS</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'query request create' %}">
+                            <i>ASK FOR OFFER</i>
+                        </a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'profile details' pk=request.user.pk %}">
+                                <i>DETAILS: {{ request.user.full_name }}</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}">
+                                <i>LOGOUT</i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'login' %}">
+                                <i>LOGIN</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'register' %}">
+                                <i>REGISTER</i>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+</header>

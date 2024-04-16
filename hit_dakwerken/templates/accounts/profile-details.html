@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="profile">
+        <div class="profile-data">
+            <div class="personal">
+                <div class="edit">
+                    <p>{{ object.username }}</p>
+                    {% if object.pk == request.user.pk %}
+                        <a href="{% url 'profile edit' pk=object.pk %}">
+                            <img class="edit-img" src="{% static '/images/edit-pen-icon-6.jpg' %}" alt="edit button">
+                        </a>
+                        <a href="{% url 'profile delete' pk=object.pk %}">
+                            <img class="bin-img" src="{% static '/images/icon-remove-22.jpg' %}" alt="bin button">
+                        </a>
+                    {% endif %}
+                </div>
+
+                <p class="email">Email: {{ request.user.email }}</p>
+
+                {% if not object.full_name == request.user.email %}
+                    <h3 class="names">Name: {{ request.user.full_name }}</h3>
+                {% else %}
+                    <h3 class="names">Name: N/A</h3>
+                {% endif %}
+
+                {% if request.user.appuserprofile.company_name %}
+                    <h3 class="names">Company: {{ request.user.appuserprofile.company_name }}</h3>
+                {% else %}
+                    <h3 class="names">Company: N/A</h3>
+                {% endif %}
+
+                {% if request.user.appuserprofile.company_address %}
+                    <h3 class="names">Address: {{ request.user.appuserprofile.company_address }}</h3>
+                {% else %}
+                    <h3 class="names">Address: N/A</h3>
+                {% endif %}
+                <h3 class="names">Date created: {{ request.user.appuserprofile.created_on }}</h3>
+                <h3 class="names">Date edited: {{ request.user.appuserprofile.edited_on }}</h3>
+            </div>
+        </div>
+    </div>
+
+    {% for query in queries %}
+
+        <div class="container">
+            <div class="col-9">
+                <div class="card">
+                    <div class="imgBx" id="{{ query.pk }}">
+                        <img src="/media/{{ query.photo }}" alt="post" class="cover">
+                    </div>
+
+                    {% if owner == request.user %}
+                        <div class="edit-delete-btns">
+
+                            <a href="{% url 'query request edit' pk=query.pk %}">
+                                <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}"
+                                     alt="edit button">
+                            </a>
+
+                            <a href="{% url 'query request delete' pk=query.pk %}">
+                                <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">
+                            </a>
+                        </div>
+
+                    {% endif %}
+                </div>
+                <p class="offer-details">{{ query.description }}</p>
+
+                <h5 class="postTime">Created on {{ query.published_on }}</h5>
+            </div>
+
+        </div>
+    {% endfor %}
+
+{% endblock %}

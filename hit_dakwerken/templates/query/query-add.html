@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="edit-delete edit-photo">
+        <h2>Query</h2>
+
+
+        <form method="post" action="{% url "query request create" %}" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+
+            <button class="add-btn" type="submit">Create</button>
+        </form>
+
+
+    </div>
+{% endblock %}

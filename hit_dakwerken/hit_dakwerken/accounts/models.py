@@ -1,4 +1,5 @@
 from django.contrib.auth import models as auth_models, get_user_model
+from django.contrib.auth.models import UserManager
 from django.core import validators
 from django.db import models
 from hit_dakwerken.accounts.managers import AppUserManager
@@ -19,15 +20,24 @@ class AppUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
         default=False,
     )
 
+    @property
+    def full_name(self):
+        if hasattr(self, 'appuserprofile'):
+            if self.appuserprofile.first_name and self.appuserprofile.last_name:
+                return f'{self.appuserprofile.first_name} {self.appuserprofile.last_name}'
+            elif self.appuserprofile.first_name or self.appuserprofile.last_name:
+                return self.appuserprofile.first_name or self.appuserprofile.last_name
+        return self.email
+
 
 UserModel = get_user_model()
 
 
 class AppUserProfile(models.Model):
-    NAME_MAX_LENGTH = 30
-    NAME_MIN_LENGTH = 3
+    NAME_MAX_LENGTH = 50
+    NAME_MIN_LENGTH = 2
     COMPANY_NAME_MAX_LENGTH = 50
-    COMPANY_NAME_MIN_LENGTH = 50
+    COMPANY_NAME_MIN_LENGTH = 2
     COMPANY_URL_MAX_LENGTH = 255
 
     first_name = models.CharField(
@@ -47,7 +57,7 @@ class AppUserProfile(models.Model):
         blank=True,
     )
 
-    company_position = models.CharField(
+    company_address = models.CharField(
         max_length=NAME_MAX_LENGTH,
         validators=(
             validators.MinLengthValidator(NAME_MIN_LENGTH),
@@ -78,7 +88,9 @@ class AppUserProfile(models.Model):
 
     created_on = models.DateTimeField(
         auto_now_add=True,
+
     )
 
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+    edited_on = models.DateTimeField(
+        auto_now=True,
+    )

@@ -2,105 +2,22 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'reset.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>HIT</title>
-    <link rel="icon" href="{% static '/images/hit_shield.jpg' %}" type="image/icon type">
-
+    <link rel="stylesheet" href="{% static '/css/reset.css' %}">
+    <link rel="stylesheet"
+          href="{% static '/css/styles.css' %}">
+    <link rel="icon" type="image/x-icon" 
+          href="{% static '/images/hit_shield.jpg' %}">
+    <title>HIT Dakwerken</title>
 </head>
 <body>
-    <div class="header">
-        <header class="navbar">
-            <div class="navbar-logo" id="navbar-logo-id">
-                <a href="{% url 'home' %}">
-                    <img src="{% static '/images/hit_logo.jpg' %}" alt="HIT Dakwerken logo">
-                </a>
-            </div>
-            <nav class="navbar-links-container">
-            
-                <ul>
-                    {% if request.user.is_authenticated %}
-                        
-                        <li class="navbar-item">
-                            <a href="{% url 'profile details' pk=user.pk %}" class="navbar-link">
-                                <i>WELCOME: {{ user.email }}</i>
-                            </a>
-                        </li>
-                        <li class="navbar-item">
-                            <a href="{% url 'create articles' %}" class="navbar-link">ARTICLE</a>
-                        </li>
-                    {% endif %}
-                
-                    <li class="navbar-item">
-                        <a href="{% url 'home' %}" class="navbar-link">HOME</a>
-                    </li>
-                
-{#                    <li class="navbar-item">#}
-{#                        <a href="#" class="navbar-link">CATEGORIES</a></li>#}
-                
-                    <li class="navbar-item">
-                        <a href="{% url 'projects' %}" class="navbar-link">PROJECTS</a>
-                    </li>
-                
-                    <li class="navbar-item">
-                        <a href="{% url 'about_us' %}" class="navbar-link">ABOUT US</a>
-                    </li>
-                
-                    <li class="navbar-item">
-                        <a href="{% url 'contacts' %}" class="navbar-link">CONTACTS</a>
-                    </li>
-                
-                    <li class="navbar-item">
-                        <a href="{% url 'register' %}" class="navbar-link">ASQ FOR OFFER</a>
-                    </li>
-                
-                    {% if request.user.is_authenticated %}
-                        
-                        <li class="navbar-item">
-                            <a href="{% url 'logout' %}" class="navbar-link">LOGOUT</a>
-                        </li>
-                        
-                    {% else %}
-                        
-                        <li class="navbar-item">
-                            <a href="{% url 'login' %}" class="navbar-link">LOGIN</a>
-                        </li>
-                        
-                    {% endif %}
-                    
-               </ul>
-            </nav>
-        </header>
-    </div>
-    <main class="main">
-        {% block content %}
-
-        {% endblock %}
-    </main>  
-    <footer>
-        <section class="footer-navbar">
-            <nav class="navbar-links-container">
-                <ul>
-                    <li class="navbar-item">
-                        <a href="{% url 'home' %}" class="navbar-link">HOME</a></li>
-{#                    <li class="navbar-item">#}
-{#                        <a href="#" class="navbar-link">CATEGORIES</a></li>#}
-{#                    <li class="navbar-item">#}
-                        <a href="{% url 'projects' %}" class="navbar-link">PROJECTS</a></li>
-                    <li class="navbar-item">
-                        <a href="{% url 'about_us' %}" class="navbar-link">ABOUT US</a></li>
-                    <li class="navbar-item">
-                        <a href="{% url 'contacts' %}" class="navbar-link">CONTACTS</a></li>
-                    <li class="navbar-item">
-                        <a href="{% url 'login' %}" class="navbar-link">LOGIN</a></li>
-               </ul>
-            </nav>
-        </section>
-    </footer>
+{% include "common/header.html" %}
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+{% include "common/footer.html" %}
 </body>
 </html>

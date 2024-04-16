@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="col-9">
+            {% for article in article_list %}
+                <a href="{% url 'project details' pk=article.pk %}">
+                    <div class="card">
+                        <div class="imgBx" id="{{ article.pk }}">
+                            <!-- Pet Photo -->
+                            <img src="/media/{{ article.image }}" alt="post" class="cover">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        
+
+                        <h5 class="postTime">{{ article.title }}</h5>
+
+                    </div>
+                </a>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

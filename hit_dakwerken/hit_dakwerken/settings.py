@@ -34,8 +34,8 @@ HIT_DAKWERKEN_APPS = (
     "hit_dakwerken.article",
     "hit_dakwerken.invoice",
     "hit_dakwerken.project",
-    "hit_dakwerken.offer",
-    "hit_dakwerken.request",
+    "hit_dakwerken.query",
+    "hit_dakwerken.offer_reply",
     "hit_dakwerken.accounts",
 )
 
@@ -129,11 +129,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-        BASE_DIR / 'static_files',
+        BASE_DIR / 'staticfiles',
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
+
 # Default URL to redirect to **after successful login**
-LOGIN_REDIRECT_URL = reverse_lazy('register')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 # Default URL to redirect to **after successful logout*
 HOME_REDIRECT_URL = reverse_lazy('home')

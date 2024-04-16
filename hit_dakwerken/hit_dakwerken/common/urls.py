@@ -4,7 +4,6 @@ from hit_dakwerken.common.views import HomePageView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
-    path('projects/', views.projects, name='projects'),
-    path('about_us/', views.about_us, name='about_us'),
-    path('contacts/', views.contacts, name='contacts'),
+    # path('about_us/', views.about_us, name='about_us'),
+    # path('contacts/', views.contacts, name='contacts'),
 ]
