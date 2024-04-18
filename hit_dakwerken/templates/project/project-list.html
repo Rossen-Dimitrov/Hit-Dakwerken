@@ -7,7 +7,6 @@
                 <a href="{% url 'project details' pk=project.pk %}">
                     <div class="card">
                         <div class="imgBx" id="{{ project.pk }}">
-                            <!-- Pet Photo -->
                             <img src="/media/{{ project.photo }}" alt="post" class="cover">
                         </div>
                     </div>
@@ -16,7 +15,6 @@
                         <h5 class="postTime">{{ project.finish_date }}</h5>
                     </div>
                 </a>
-
             {% endfor %}
         </div>
     </div>
