@@ -5,8 +5,9 @@
         <img src="{% static 'images/waterproofing1.jpg' %}" alt="">
     </div>
     <div class="container">
-        <div class="col-9">
-            {% for article in article_list %}
+        {% for article in article_list %}
+            <div class="article">
+
                 <a href="{% url 'article details' pk=article.pk %}">
                     <div class="card">
                         <div class="imgBx" id="{{ article.pk }}">
@@ -17,8 +18,8 @@
                         <h5 class="postTime">{{ article.title }}</h5>
                     </div>
                 </a>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
 

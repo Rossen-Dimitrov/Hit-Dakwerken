@@ -7,6 +7,7 @@
 body {
     background: #fafafa;
     min-height: 100vh;
+    text-align: center;
 }
 
 .error {
@@ -25,11 +26,20 @@ body {
 }
 
 .container {
-    padding: 15px 0;
-    width: 75%;
+    padding: 8px 0;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .container {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .container a {
@@ -63,7 +73,7 @@ body {
     padding: 5px 5px 5px 0;
     text-indent: 21px;
     outline: none;
-    border: 1px solid rgb(218, 217, 217);
+    border: 3px solid rgb(218, 217, 217);
     border-radius: 2px;
     color: rgb(77, 77, 77);
 }
@@ -80,7 +90,8 @@ body {
 .searchbar img {
     position: absolute;
     margin-left: -2.5rem;
-    margin-top: -0.8rem;
+    margin-top: -1.0rem;
+    height: 24px;
 }
 
 .searchbar input::placeholder {
@@ -116,131 +127,95 @@ body {
     justify-content: center;
 }
 
-.action .profile {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.action .profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-main {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/*.action .profile {*/
+/*    position: relative;*/
+/*    width: 25px;*/
+/*    height: 25px;*/
+/*    border-radius: 50%;*/
+/*    overflow: hidden;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
 
-main .container {
-    position: relative;
-    margin-top: 60px;
-    width: 75%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
+/*.action .profile img {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*}*/
 
-.col-9 {
-    width: 65%;
-    margin: 5% auto -20px;
-}
+/*main {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
 
-.col-9 .card {
-    margin-bottom: 20px;
-    position: relative;
-    width: 100%;
-    /* min-height: 400px; */
-    display: inline-block;
-    border: 1px solid rgba(7, 7, 7, 0.24);
-}
 
-.col-9 .card .top {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.col-9 .card .bottom {
-    padding: 10px 20px;
-}
 
-.col-9 .card .top .userDetails {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
 
-.profilepic {
-    display: inline-block;
-}
+/*.article {*/
+/*    width: 30%;*/
+/*    !*margin: 5% auto -20px;*!*/
+/*}*/
 
-.profilepic .profile_img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(to right, red, orange);
-    padding: 2px;
-    margin-right: 8px;
-}
+/*.article .card {*/
+/*    margin-bottom: 20px;*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    !* min-height: 400px; *!*/
+/*    display: inline-block;*/
+/*    border: 1px solid rgba(7, 7, 7, 0.24);*/
+/*}*/
 
-.profilepic .profile_img .image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    margin-top: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid white;
-}
+/*.article .card .top {*/
+/*    padding: 10px 20px;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/
 
-.profilepic .profile_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-top: 0 !important;
-}
+/*.article .card .bottom {*/
+/*    padding: 10px 20px;*/
+/*}*/
 
-.cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/*.article .card .top .userDetails {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
-.col-9 .card .top .userDetails h3 {
-    font-size: 16px;
-    color: #4d4d4f;
-    font-weight: 500;
-    line-height: 1em;
-    white-space: nowrap; 
-}
 
-.col-9 .card .top .userDetails h3 span {
-    font-size: 0.75em;
-}
 
-.col-9 .card .top .userDetails h3 span {
-    font-size: 0.75em;
-}
+
+
+/*.cover {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*}*/
+
+/*.article .card .top .userDetails h3 {*/
+/*    font-size: 16px;*/
+/*    color: #4d4d4f;*/
+/*    font-weight: 500;*/
+/*    line-height: 1em;*/
+/*    white-space: nowrap; */
+/*}*/
+
+/*.article .card .top .userDetails h3 span {*/
+/*    font-size: 0.75em;*/
+/*}*/
+
+/*.article .card .top .userDetails h3 span {*/
+/*    font-size: 0.75em;*/
+/*}*/
 
 .dot {
     transform: scale(0.6);
@@ -268,13 +243,6 @@ main .container {
     margin-right: 8px;
 }
 
-.likes {
-    font-weight: 500;
-    margin-top: 5px;
-    font-size: 14px;
-    cursor: default;
-    color: #4d4d4f;
-}
 
 .message {
     font-weight: 400;
@@ -299,31 +267,6 @@ main .container {
     color: #999;
 }
 
-.addComments {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding: 10px 0;
-}
-
-.addComments button {
-    position: absolute;
-    right: 30px;
-    color: #1d92ffcb;
-    font-weight: 500;
-    font-size: 15px;
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
-}
-
-.addComments .reaction {
-    position: relative;
-    font-size: 1.3rem;
-    margin-right: 10px;
-    color: rgb(88, 88, 88);
-}
 
 textarea {
     position: absolute;
@@ -344,89 +287,75 @@ textarea.text::placeholder {
     color: #777;
 }
 
-.addComments form label {
-    display: none;
-}
 
-.addComments form {
-    display: flex;
-    margin-bottom: 15px;
-}
+/*.postTime {*/
+/*    margin-top: 8px;*/
+/*    font-weight: lighter;*/
+/*    cursor: default;*/
+/*    color: rgb(163, 163, 163);*/
+/*    font-size: 12px;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
-.postTime {
-    margin-top: 8px;
-    font-weight: lighter;
-    cursor: default;
-    color: rgb(163, 163, 163);
-    font-size: 12px;
-    text-transform: uppercase;
-}
+/*a {*/
+/*    text-decoration: none;*/
+/*}*/
 
-a {
-    text-decoration: none;
-}
+/*.hidden {*/
+/*    display: none;*/
+/*}*/
 
-.hidden {
-    display: none;
-}
+/*@media screen and (max-width: 1000px) {*/
+/*    .article {*/
+/*        width: 100%;*/
+/*        background: #fafafa;*/
+/*    }*/
 
-@media screen and (max-width: 1000px) {
-    .col-9 {
-        width: 100%;
-        background: #fafafa;
-    }
+/*    .col-3 {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 
-    .col-3 {
-        display: none;
-    }
-}
+/*@media screen and (max-width: 600px) {*/
+/*    .container {*/
+/*        width: 100% !important;*/
+/*    }*/
 
-@media screen and (max-width: 600px) {
-    .container {
-        width: 100% !important;
-    }
+/*    .navbar .container {*/
+/*        padding: 15px 10px !important;*/
+/*    }*/
 
-    .navbar .container {
-        padding: 15px 10px !important;
-    }
+/*    .article {*/
+/*        margin-top: 4px;*/
+/*        min-width: 100%;*/
+/*    }*/
 
-    .col-9 {
-        margin-top: 4px;
-        min-width: 100%;
-    }
+/*    .statuses {*/
+/*        margin-bottom: 0;*/
+/*    }*/
 
-    .statuses {
-        margin-bottom: 0;
-    }
+/*    .article .card {*/
+/*        margin-bottom: 0;*/
+/*        width: 100%;*/
+/*        border: none;*/
+/*    }*/
 
-    .col-9 .card {
-        margin-bottom: 0;
-        width: 100%;
-        border: none;
-    }
+/*    .imgBx {*/
+/*        position: relative;*/
+/*        width: 100%;*/
+/*        min-height: 400px;*/
+/*        margin: 10px 0 15px;*/
+/*    }*/
 
-    .imgBx {
-        position: relative;
-        width: 100%;
-        min-height: 400px;
-        margin: 10px 0 15px;
-    }
-
-}
+/*}*/
 
 .footer {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .footer .footer-section {
     position: relative;
     width: 100%;
-    font-size: 12px;
-    font-family: sans-serif;
-    z-index: -2;
-}
-
-.footer a:hover {
-    color: #ff0000;
+    font-size: 16px;
 }

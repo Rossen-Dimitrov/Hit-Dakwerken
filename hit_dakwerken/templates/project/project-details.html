@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="container">
-        <div class="col-9">
+        <div class="article">
             <div class="card">
                 <div class="imgBx" id="{{ project.pk }}">
                     <!-- Pet Photo -->
@@ -10,9 +10,9 @@
                 </div>
             </div>
             <div class="bottom">
-                <p class="pet-details">{{ project.location }}</p>
+                <p class="article-details">{{ project.location }}</p>
                 <h5 class="postTime">{{ project.finish_date }}</h5>
-                <p class="pet-details">{{ project.description }}</p>
+                <p class="article-details">{{ project.description }}</p>
             </div>
         </div>
     </div>

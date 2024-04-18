@@ -3,19 +3,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="edit-delete edit-photo">
-        <h2>Delete Query</h2>
-
-        <form method="POST" action="{% url 'query delete' pk %}">
-            {{ form.as_p }}
-            {% csrf_token %}
-
-            <button class="delete-btn" type="submit">Delete</button>
-
-            <a class="btn btn-primary" href="javascript:history.back()">
-                <button class="edit-btn" type="button">Go back</button>
-            </a>
-        </form>
-
+    <div class="container">
+        <div class="edit-delete edit-photo">
+            <h2>Delete Query</h2>
+            <form method="POST" action="{% url 'query delete' pk %}">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <button class="delete-btn" type="submit">Delete</button>
+                <a class="btn btn-primary" href="javascript:history.back()">
+                    <button class="edit-btn" type="button">Go back</button>
+                </a>
+            </form>
+        </div>
     </div>
 {% endblock %}

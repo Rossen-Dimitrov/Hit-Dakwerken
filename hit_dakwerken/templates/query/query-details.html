@@ -1,42 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
     <div class="container">
-        <div class="col-9">
-
-
+        <div class="article">
             <div class="card">
-
-
                 <div class="imgBx" id="{{ query.pk }}">
-
                     <img src="/media/{{ query.photo }}" alt="post" class="cover">
                 </div>
-
                 {% if owner == request.user %}
-
                     <div class="edit-delete-btns">
-
                         <a href="{% url 'query request edit' pk=query.pk %}">
                             <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}"
                                  alt="edit button">
                         </a>
-
-
                         <a href="{% url 'query request delete' pk=query.pk %}">
                             <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">
                         </a>
                     </div>
-
                 {% endif %}
             </div>
             <p class="offer-details">{{ query.description }}</p>
-
-
             <h5 class="postTime">Created on {{ query.published_on }}</h5>
         </div>
-
     </div>
-    
 {% endblock %}

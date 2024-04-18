@@ -33,7 +33,7 @@
                     {% if request.user.is_authenticated %}
                         <li class="nav-item">
                             <a href="{% url 'profile details' pk=request.user.pk %}">
-                                <i>DETAILS: {{ request.user.full_name }}</i>
+                                <i>DETAILS: {{ request.user.full_name|upper }}</i>
                             </a>
                         </li>
 
@@ -58,5 +58,4 @@
             </div>
         </div>
     </nav>
-   
 </header>

@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container">
-        <div class="col-9">
+        <div class="container">
+        <div class="article">
             <div class="card">
                 <div class="imgBx" id="{{ article.pk }}">
-                    <!-- Pet Photo -->
                     <img src="/media/{{ article.image }}" alt="post" class="cover">
                 </div>
             </div>
             <div class="bottom">
-                <p class="pet-details">{{ article.title }}</p>
+                <p class="article-details">{{ article.title }}</p>
                 <h5 class="postTime">{{ article.finish_date }}</h5>
-                <p class="pet-details">{{ article.content }}</p>
+                <p class="article-details">{{ article.content }}</p>
             </div>
         </div>
-    </div>
 {% endblock %}

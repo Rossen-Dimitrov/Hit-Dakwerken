@@ -1,3 +1,50 @@
+/* Styles for the article section */
+.article {
+	width: calc(33.33% - 16px); /* Calculate width for 3 articles per row with margins */
+    margin-bottom: 16px; /* Add bottom margin between rows */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Styles for the article title */
+.article .title {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Styles for the article image card */
+.article .card {
+    overflow: hidden;
+	height: 260px;
+    width: 260px;
+}
+
+/* Styles for the image box */
+.article .imgBx {
+    height: 100%;
+    width: 100%;
+}
+
+/* Styles for the article image */
+.article .cover {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styles for the bottom section */
+.article .bottom {
+    padding: 10px;
+
+}
+
+/* Styles for the "Continue reading" text */
+.article .bottom .postTime {
+    color: #666;
+    font-size: 14px;
+}
+
+
+
 .edit-delete {
     margin-top: 150px;
 }
