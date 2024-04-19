@@ -17,3 +17,19 @@
     font-family: sans-serif;
 }
 
+
+.offer{
+    width: 500px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-bottom: 140px;
+}
+.offer p {
+    font-size: 18px;
+    text-align: justify;
+}
+.offer h1 {
+    font-weight: bold;
+    text-align: right;
+}

@@ -64,6 +64,22 @@
             </div>
             <p class="content">{{ query.description }}</p>
             <h5 class="postTime">Created on {{ query.published_on }}</h5>
+            {% if query.offer %}
+                <div class="offer">
+                    <div class="title">
+                        <h5 class="post_title">We have offer for your query</h5>
+                    </div>
+                    <p>{{ query.offer.description }}</p>
+                    <h1>Price: {{ query.offer.price }}</h1>
+                </div>
+
+            {% else %}
+                <div class="offer">
+                    <div class="title">
+                        <h5 class="post_title">Still No offer for your query</h5>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}

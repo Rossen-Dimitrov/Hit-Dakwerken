@@ -42,3 +42,5 @@ class Query(models.Model):
         blank=True
     )
 
+    def __str__(self):
+        return f"Query ID: {self.id} User: {self.user}"
