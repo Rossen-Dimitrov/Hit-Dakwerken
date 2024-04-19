@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-        <div class="container">
-        <div class="article">
-            <div class="card">
-                <div class="imgBx" id="{{ article.pk }}">
-                    <img src="/media/{{ article.image }}" alt="post" class="cover">
-                </div>
+    <div class="container">
+
+        <div class="article-details">
+            <p class="title">{{ article.title }}</p>
+            <div class="imgBx">
+                <img src="/media/{{ article.image }}" alt="post" class=imgBx-image>
             </div>
-            <div class="bottom">
-                <p class="article-details">{{ article.title }}</p>
-                <h5 class="postTime">{{ article.finish_date }}</h5>
-                <p class="article-details">{{ article.content }}</p>
-            </div>
+            <p class="content">{{ article.content }}</p>
+            <h5 class="postTime">Published at: {{ article.published_on }}</h5>
         </div>
+    </div>
 {% endblock %}
+

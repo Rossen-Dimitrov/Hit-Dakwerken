@@ -26,11 +26,11 @@ class Article(models.Model):
         related_name='articles',
     )
 
-    published_on = models.DateTimeField(
+    published_on = models.DateField(
         auto_now_add=True,
     )
 
-    edited_on = models.DateTimeField(
+    edited_on = models.DateField(
         auto_now=True,
     )
 

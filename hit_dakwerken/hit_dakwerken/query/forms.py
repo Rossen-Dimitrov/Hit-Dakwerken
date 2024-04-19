@@ -10,8 +10,27 @@ OFFER_CONTENT_MIN_LENGTH = 10
 class QueryBaseForm(forms.ModelForm):
     class Meta:
         model = Query
-        fields = ['description', 'photo']
+        fields = ['description',]
+        widgets = {
+            'description': forms.Textarea(attrs={'placeholder': 'Describe your query'})
+        }
 
 
 class QueryCreateForm(QueryBaseForm):
-    pass
+    class Meta:
+        model = Query
+        fields = ['description', 'photo']
+
+        widgets = {
+            'description': forms.Textarea(attrs={'placeholder': 'Describe your query'})
+        }
+
+
+class QueryEditForm(QueryBaseForm):
+    class Meta:
+        model = Query
+        fields = ['description']
+
+        widgets = {
+            'description': forms.Textarea(attrs={'placeholder': 'Describe your query'})
+        }

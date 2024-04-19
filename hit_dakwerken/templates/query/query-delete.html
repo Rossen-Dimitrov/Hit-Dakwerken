@@ -6,7 +6,7 @@
     <div class="container">
         <div class="edit-delete edit-photo">
             <h2>Delete Query</h2>
-            <form method="POST" action="{% url 'query delete' pk %}">
+            <form method="POST" action="{% url 'query delete' pk=object.pk %}">
                 {{ form.as_p }}
                 {% csrf_token %}
                 <button class="delete-btn" type="submit">Delete</button>

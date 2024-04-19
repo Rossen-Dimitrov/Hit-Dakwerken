@@ -31,12 +31,12 @@ class Project(models.Model):
         blank=False,
         null=False,
     )
-    finish_date = models.DateTimeField(
+    finish_date = models.DateField(
         blank=True,
         null=True,
     )
 
-    date_of_publication = models.DateTimeField(
+    date_of_publication = models.DateField(
         auto_now=True,
         blank=False,
         null=False,

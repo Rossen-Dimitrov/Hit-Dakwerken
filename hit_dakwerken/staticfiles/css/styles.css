@@ -1,7 +1,8 @@
 @import './home.css';
 @import './article.css';
+@import './project.css';
 @import './login.css';
 @import './404.css';
-@import 'query.css';
+@import './query.css';
 @import './profile.css';
 @import './offer.css';

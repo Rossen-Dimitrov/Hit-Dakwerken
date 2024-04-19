@@ -4,7 +4,7 @@
     <div class="container">
         <div class="edit-delete edit-photo">
             <h2>Edit Query</h2>
-            <form method="post" action="{% url 'query edit' username slug %}">
+            <form method="post" action="{% url 'query edit' pk=query.pk%}">
                 {{ form.as_p }}
                 {% csrf_token %}
                 <button class="edit-btn" type="submit">Edit</button>

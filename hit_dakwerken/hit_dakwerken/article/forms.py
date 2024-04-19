@@ -15,11 +15,11 @@ class ArticleCreateForm(forms.ModelForm):
         ),
     )
 
-    content = forms.CharField(
-        widget=forms.Textarea,
-        validators=(
-            validators.MinLengthValidator(ARTICLE_CONTENT_MIN_LENGTH),
-        ),
+    content = forms.Textarea(
+        # widget=forms.Textarea,
+        # validators=(
+        #     validators.MinLengthValidator(ARTICLE_CONTENT_MIN_LENGTH),
+        # ),
     )
 
     image = forms.ImageField()

@@ -1,151 +1,86 @@
-/* Styles for the article section */
-.article {
-	width: calc(33.33% - 16px); /* Calculate width for 3 articles per row with margins */
-    margin-bottom: 16px; /* Add bottom margin between rows */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+/* Article Main */
+.article-main {
+    width: 300px;
+    height: 360px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
-/* Styles for the article title */
-.article .title {
+.imgBx-image {
+    width: 100%;
+    height: 100%;
+}
+
+.article-main .card {
+    width: 300px;
+    height: 340px;
+    overflow: hidden;
+}
+
+.title {
     padding: 10px;
     background-color: #f0f0f0;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-/* Styles for the article image card */
-.article .card {
-    overflow: hidden;
-	height: 260px;
-    width: 260px;
-}
-
-/* Styles for the image box */
-.article .imgBx {
-    height: 100%;
+.article-main .imgBx {
     width: 100%;
+    /*height: 200px;*/
+    overflow: hidden;
 }
 
-/* Styles for the article image */
-.article .cover {
+.article-main .cover {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Styles for the bottom section */
-.article .bottom {
+.article-main .side {
     padding: 10px;
-
+    background-color: #f0f0f0;
+    font-size: 18px;
 }
 
-/* Styles for the "Continue reading" text */
-.article .bottom .postTime {
-    color: #666;
-    font-size: 14px;
+.article-main .article-content {
+    height: 24px; /* Adjust height for content box */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.postTime {
+    padding-right: 10px;
+    text-align: right;
+}
+/* END Article Main */
+/*#############################################################*/
+/* Article Details */
+.article-details {
+    margin: 100px auto 0 auto;
+    width: 100%;
+}
+
+.article-details .imgBx {
+    float: left;
+    margin-right: 20px;
+    width: 360px;
+    height: 360px;
 }
 
 
-
-.edit-delete {
-    margin-top: 150px;
+.article-details .content {
+    /*overflow: hidden;*/
+    /*width: 80%;*/
+    /*    !*word-wrap: break-word; !* Enable word wrapping for long words *!*!*/
+    text-align: justify;
 }
 
-.login-register-div {
-	margin-top: 13%;
+.title {
+    padding: 10px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    font-size: 20px;
 }
+/* END Article Details */
 
-.edit-delete {
-	display: block;
-	background-color: rgb(255, 255, 255);
-	border: 1px solid rgb(156, 152, 152);
-	padding: 40px;
-	margin-bottom: 15px;
-	border-radius: 3px;
-	border: 1px solid;
-	box-shadow: 1px 2px 3px #888888;
-}
-
-.edit-delete h2 {
-	text-align: center;
-	margin-top: -10px;
-	text-shadow: 1px 1px rgb(65, 63, 63);
-}
-
-.edit-delete label {
-	display: none;
-}
-
-.edit-delete input, select {
-	background-color: rgb(240, 230, 230);
-	border: 0.1px solid rgb(186, 184, 184);
-	border-radius: 3px;
-	height: 30px;
-	padding-left: 2px;
-	margin-top: 10px;
-}
-
-.edit-delete button {
-	color: white;
-	font-weight: bold;
-	font-size: 13px;
-	border: none;
-	width: 100%;
-	border-radius: 3px;
-	margin-top: 10px;
-	height: 30px;
-    box-shadow: 2px 3px #888888;
-    cursor: pointer;
-}
-
-.edit-delete textarea {
-	position: relative !important;
-}
-
-.edit-delete a {
-	color: white;
-}
-
-.edit-photo select {
-
-}
-
-.edit-photo label {
-	display: initial !important;
-	margin-top: 12px;
-	margin-right: 5px;
-	white-space: nowrap;
-}
-
-.edit-photo textarea {
-	background-color: rgb(240, 230, 230);
-	border: 0.1px solid rgb(186, 184, 184);
-	border-radius: 3px;
-	height: 30px;
-	width: 77.7%;
-	margin-left: -30px;
-	padding-left: 2px;
-	margin-top: 10px;
-}
-
-.edit-photo input {
-	padding: 3px;
-}
-
-.edit-photo p {
-	display: flex;
-}
-
-.delete-btn {
-	background-color: rgb(255, 0, 0);
-}
-
-.edit-btn {
-	background-color: rgb(0, 102, 255);
-}
-
-.add-btn {
-	background-color: rgb(67, 185, 12);
-}
-
-.edit-delete button:hover {
-    box-shadow: none;
-}

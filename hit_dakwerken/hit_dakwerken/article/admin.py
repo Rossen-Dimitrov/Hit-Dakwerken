@@ -5,4 +5,4 @@ from hit_dakwerken.article.models import Article
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'published_on']
