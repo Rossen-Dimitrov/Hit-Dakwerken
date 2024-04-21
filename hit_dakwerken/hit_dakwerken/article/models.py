@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core import validators
 from django.db import models
 
+
 UserModel = get_user_model()
 
 ARTICLE_TITLE_MAX_LENGTH = 250
@@ -21,9 +22,9 @@ class Article(models.Model):
             validators.MinLengthValidator(ARTICLE_CONTENT_MIN_LENGTH),
         ),
     )
-    authors = models.ManyToManyField(
+    user = models.ManyToManyField(
         to=UserModel,
-        related_name='articles',
+        # related_name='articles',
     )
 
     published_on = models.DateField(
@@ -42,5 +43,4 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
-
 

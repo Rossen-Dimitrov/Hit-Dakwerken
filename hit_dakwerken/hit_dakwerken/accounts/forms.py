@@ -12,8 +12,6 @@ class AppUserRegisterForm(auth_forms.UserCreationForm):
         model = UserModel
         fields = ('email',)
 
-    # consent = forms.BooleanField()
-
     password1 = forms.CharField(
         label=_("Password"),
         strip=False,
@@ -39,8 +37,3 @@ class AppUserEditForm(forms.ModelForm):
             'company_address': 'Company Address',
             'company_url': 'Company URL'
         }
-
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['first_name'].widget.attrs.update({'placeholder': 'First Name'})
-

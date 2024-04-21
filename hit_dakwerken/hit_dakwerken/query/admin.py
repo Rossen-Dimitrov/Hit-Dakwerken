@@ -7,3 +7,4 @@ class QueryAdmin(admin.ModelAdmin):
     list_display = ('user', 'description', 'published_on')
     list_filter = ('published_on', 'user')
     search_fields = ['user__email']
+    search_help_text = f"Search by {', '.join(search_fields)}"

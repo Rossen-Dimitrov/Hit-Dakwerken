@@ -27,7 +27,7 @@ class AppUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
                 return f'{self.appuserprofile.first_name} {self.appuserprofile.last_name}'
             elif self.appuserprofile.first_name or self.appuserprofile.last_name:
                 return self.appuserprofile.first_name or self.appuserprofile.last_name
-        return  self.email.split('@')[0]
+        return self.email.split('@')[0]
 
 
 UserModel = get_user_model()

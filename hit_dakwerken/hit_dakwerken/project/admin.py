@@ -8,4 +8,4 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('description', 'location', 'finish_date', 'date_of_publication')
     list_filter = ('location', 'finish_date', 'date_of_publication')
     search_fields = ('location', 'finish_date', 'date_of_publication')
-
+    search_help_text = f"Search by {', '.join(search_fields)}"
